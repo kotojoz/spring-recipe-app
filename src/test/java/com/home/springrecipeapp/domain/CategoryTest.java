@@ -1,34 +1,32 @@
 package com.home.springrecipeapp.domain;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CategoryTest {
+class CategoryTest {
 
     Category category;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         category = new Category();
     }
 
     @Test
-    public void getId() {
-
-        Long idValue = 4l;
-
+    void getId() {
+        Long idValue = 4L;
         category.setId(idValue);
-
         assertEquals(idValue, category.getId());
     }
 
     @Test
-    public void getDescription() {
+    void getDescription() {
+
     }
 
     @Test
-    public void getRecipes() {
+    void getRecipes() {
     }
 }
