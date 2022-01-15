@@ -96,10 +96,10 @@ public class RecipeServiceImplTest {
     public void getRecipesTest() throws Exception {
 
         Recipe recipe = new Recipe();
-        HashSet receipesData = new HashSet();
-        receipesData.add(recipe);
+        Set<Recipe> recipeData = new HashSet<>();
+        recipeData.add(recipe);
 
-        when(recipeService.getRecipes()).thenReturn(receipesData);
+        when(recipeService.getRecipes()).thenReturn(recipeData);
 
         Set<Recipe> recipes = recipeService.getRecipes();
 
