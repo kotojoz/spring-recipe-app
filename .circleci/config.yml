@@ -4,6 +4,8 @@ version: 2.1
 env:
   global:
     CODECOV_TOKEN='c2415278-899a-4e2e-b0d1-b8f006107871'
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -29,8 +31,7 @@ jobs:
       - run:
           name: Test
           command: mvn test
-          after_success:
-            - bash <(curl -s https://codecov.io/bash)
+
 
 
 
