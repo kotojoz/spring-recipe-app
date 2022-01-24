@@ -29,6 +29,8 @@ jobs:
       - run:
           name: Test
           command: mvn test
+          after_success:
+            - bash <(curl -s https://codecov.io/bash)
 
 
 
@@ -40,6 +42,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
-    after_success:
-      - bash <(curl -s https://codecov.io/bash)
 
