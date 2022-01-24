@@ -25,7 +25,8 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test cobertura:cobertura
+          command: mvn
+      script: "mvn cobertura:cobertura"
 
       - run:
           name: Send to CodeCov
