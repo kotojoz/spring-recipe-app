@@ -27,12 +27,12 @@ public class BootStrapMySQL implements ApplicationListener<ContextRefreshedEvent
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
-        if (categoryRepository.count() == 0L) {
+        if (categoryRepository.count() != 0L) {
             log.debug("Loading Categories");
             loadCategories();
         }
 
-        if (unitOfMeasureRepository.count() == 0L) {
+        if (unitOfMeasureRepository.count() != 0L) {
             log.debug("Loading UOMs");
             loadUom();
         }
